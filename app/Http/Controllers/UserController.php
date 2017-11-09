@@ -148,6 +148,7 @@ class UserController extends Controller
             $info->cost = $request["cost"];
             $info->users_id = $id;
             $info->save();
+            $request->session()->flash('success', 'You have successfully added data...');
             return redirect('/home');
         }
         else if($request["month"] == 2)
@@ -161,6 +162,7 @@ class UserController extends Controller
             $info->cost = $request["cost"];
             $info->users_id = $id;
             $info->save();
+            $request->session()->flash('success', 'You have successfully added data...');
             return redirect('/home');
         }
         else if($request["month"] == 3)
@@ -174,6 +176,7 @@ class UserController extends Controller
             $info->cost = $request["cost"];
             $info->users_id = $id;
             $info->save();
+            $request->session()->flash('success', 'You have successfully added data...');
             return redirect('/home');
         }
         else if($request["month"] == 4)
@@ -187,6 +190,7 @@ class UserController extends Controller
             $info->cost = $request["cost"];
             $info->users_id = $id;
             $info->save();
+            $request->session()->flash('success', 'You have successfully added data...');
             return redirect('/home');
         }
         else if($request["month"] == 5)
@@ -200,6 +204,7 @@ class UserController extends Controller
             $info->cost = $request["cost"];
             $info->users_id = $id;
             $info->save();
+            $request->session()->flash('success', 'You have successfully added data...');
             return redirect('/home');
         }
         else if($request["month"] == 6)
@@ -213,6 +218,7 @@ class UserController extends Controller
             $info->cost = $request["cost"];
             $info->users_id = $id;
             $info->save();
+            $request->session()->flash('success', 'You have successfully added data...');
             return redirect('/home');
         }
         else if($request["month"] == 7)
@@ -226,6 +232,7 @@ class UserController extends Controller
             $info->cost = $request["cost"];
             $info->users_id = $id;
             $info->save();
+            $request->session()->flash('success', 'You have successfully added data...');
             return redirect('/home');
         }
         else if($request["month"] == 8)
@@ -239,6 +246,7 @@ class UserController extends Controller
             $info->cost = $request["cost"];
             $info->users_id = $id;
             $info->save();
+            $request->session()->flash('success', 'You have successfully added data...');
             return redirect('/home');
         }
         else if($request["month"] == 9)
@@ -252,6 +260,7 @@ class UserController extends Controller
             $info->cost = $request["cost"];
             $info->users_id = $id;
             $info->save();
+            $request->session()->flash('success', 'You have successfully added data...');
             return redirect('/home');
         }
         else if($request["month"] == 10)
@@ -265,6 +274,7 @@ class UserController extends Controller
             $info->cost = $request["cost"];
             $info->users_id = $id;
             $info->save();
+            $request->session()->flash('success', 'You have successfully added data...');
             return redirect('/home');
         }
         else if($request["month"] == 11)
@@ -278,6 +288,7 @@ class UserController extends Controller
             $info->cost = $request["cost"];
             $info->users_id = $id;
             $info->save();
+            $request->session()->flash('success', 'You have successfully added data...');
             return redirect('/home');
         }
         else
@@ -291,6 +302,7 @@ class UserController extends Controller
             $info->cost = $request["cost"];
             $info->users_id = $id;
             $info->save();
+            $request->session()->flash('success', 'You have successfully added data...');
             return redirect('/home');
 
         }
