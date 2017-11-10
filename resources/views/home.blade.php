@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>Vehicle Hire</title>
+<title>Cost Counter</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -80,7 +80,6 @@ body {font-family: "Lato", sans-serif}
             <br>
             <br>
             <br>
-            
             <div class="col-sm-3">
                 
             </div>
@@ -98,9 +97,7 @@ body {font-family: "Lato", sans-serif}
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-3">
-
-            </div>
+            <div class="col-sm-3"> </div>
             <div class="col-sm-6">
                 <form action="/info" method="POST">
                     {{ csrf_field() }}
@@ -177,8 +174,8 @@ body {font-family: "Lato", sans-serif}
                 <br>
 <footer>
     <h3> Developed By</h3>
-    <h3> Shahabuddin Ahmed</h3>
-    <h3>University of Rajshahi</h3>
+    <h3><i>Shahabuddin Ahmed</i></h3>
+    <h3><i>University of Rajshahi</i></h3>
 </footer>
 
 <script>
