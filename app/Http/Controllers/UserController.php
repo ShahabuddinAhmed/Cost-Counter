@@ -41,7 +41,8 @@ class UserController extends Controller
     {
         $id = Auth::user()->id;
         $mon = 1;
-        $alls = Users::find($id)->jan;
+        $year = date("Y");
+        $alls = Users::find($id)->jan->where("year", $year);
         return view('viewinfo', compact('alls', 'mon'));
     }
 
@@ -49,7 +50,8 @@ class UserController extends Controller
     {
         $id = Auth::user()->id;
         $mon = 2;
-        $alls = Users::find($id)->feb;
+        $year = date("Y");
+        $alls = Users::find($id)->feb->where("year", $year);
         return view('viewinfo', compact('alls', 'mon'));
     }
 
@@ -57,7 +59,8 @@ class UserController extends Controller
     {
         $id = Auth::user()->id;
         $mon = 3;
-        $alls = Users::find($id)->mar;
+        $year = date("Y");
+        $alls = Users::find($id)->mar->where("year", $year);
         return view('viewinfo', compact('alls', 'mon'));
     }
 
@@ -65,7 +68,8 @@ class UserController extends Controller
     {
         $id = Auth::user()->id;
         $mon = 4;
-        $alls = Users::find($id)->apr;
+        $year = date("Y");
+        $alls = Users::find($id)->apr->where("year", $year);
         return view('viewinfo', compact('alls', 'mon'));
     }
 
@@ -73,7 +77,8 @@ class UserController extends Controller
     {
         $id = Auth::user()->id;
         $mon = 5;
-        $alls = Users::find($id)->may;
+        $year = date("Y");
+        $alls = Users::find($id)->may->where("year", $year);
         return view('viewinfo', compact('alls', 'mon'));
     }
 
@@ -81,7 +86,8 @@ class UserController extends Controller
     {
         $id = Auth::user()->id;
         $mon = 6;
-        $alls = Users::find($id)->jun;
+        $year = date("Y");
+        $alls = Users::find($id)->jun->where("year", $year);
         return view('viewinfo', compact('alls', 'mon'));
     }
 
@@ -89,7 +95,8 @@ class UserController extends Controller
     {
         $id = Auth::user()->id;
         $mon = 7;
-        $alls = Users::find($id)->jul;
+        $year = date("Y");
+        $alls = Users::find($id)->jul->where("year", $year);
         return view('viewinfo', compact('alls', 'mon'));
     }
 
@@ -97,7 +104,8 @@ class UserController extends Controller
     {
         $id = Auth::user()->id;
         $mon = 8;
-        $alls = Users::find($id)->aug;
+        $year = date("Y");
+        $alls = Users::find($id)->aug->where("year", $year);
         return view('viewinfo', compact('alls', 'mon'));
     }
 
@@ -105,7 +113,8 @@ class UserController extends Controller
     {
         $id = Auth::user()->id;
         $mon = 9;
-        $alls = Users::find($id)->sep;
+        $year = date("Y");
+        $alls = Users::find($id)->sep->where("year", $year);
         return view('viewinfo', compact('alls', 'mon'));
     }
 
@@ -113,7 +122,8 @@ class UserController extends Controller
     {
         $id = Auth::user()->id;
         $mon = 10;
-        $alls = Users::find($id)->oct;
+        $year = date("Y");
+        $alls = Users::find($id)->oct->where("year", $year);
         return view('viewinfo', compact('alls', 'mon'));
     }
 
@@ -121,7 +131,8 @@ class UserController extends Controller
     {
         $id = Auth::user()->id;
         $mon = 11;
-        $alls = Users::find($id)->nov;
+        $year = date("Y");
+        $alls = Users::find($id)->nov->where("year", $year);
         return view('viewinfo', compact('alls', 'mon'));
     }
 
@@ -129,7 +140,8 @@ class UserController extends Controller
     {
         $id = Auth::user()->id;
         $mon = 12;
-        $alls = Users::find($id)->dec;
+        $year = date("Y");
+        $alls = Users::find($id)->dec->where("year", $year);
         return view('viewinfo', compact('alls', 'mon'));
     }
 
@@ -143,7 +155,10 @@ class UserController extends Controller
             $id = Auth::user()->id;
             $info->day = $request["day"];
             $info->month = $request["month"];
-            $info->year = "2017";
+            $time = date("Y");
+            $time = strtotime($time);
+            $year = date("Y", $time);
+            $info->year = $year;
             $info->item = $request["item"];
             $info->cost = $request["cost"];
             $info->users_id = $id;
@@ -157,7 +172,10 @@ class UserController extends Controller
             $id = Auth::user()->id;
             $info->day = $request["day"];
             $info->month = $request["month"];
-            $info->year = "2017";
+            $time = date("Y");
+            $time = strtotime($time);
+            $year = date("Y", $time);
+            $info->year = $year;
             $info->item = $request["item"];
             $info->cost = $request["cost"];
             $info->users_id = $id;
@@ -171,7 +189,10 @@ class UserController extends Controller
             $id = Auth::user()->id;
             $info->day = $request["day"];
             $info->month = $request["month"];
-            $info->year = "2017";
+            $time = date("Y");
+            $time = strtotime($time);
+            $year = date("Y", $time);
+            $info->year = $year;
             $info->item = $request["item"];
             $info->cost = $request["cost"];
             $info->users_id = $id;
@@ -185,7 +206,10 @@ class UserController extends Controller
             $id = Auth::user()->id;
             $info->day = $request["day"];
             $info->month = $request["month"];
-            $info->year = "2017";
+            $time = date("Y");
+            $time = strtotime($time);
+            $year = date("Y", $time);
+            $info->year = $year;
             $info->item = $request["item"];
             $info->cost = $request["cost"];
             $info->users_id = $id;
@@ -199,7 +223,10 @@ class UserController extends Controller
             $id = Auth::user()->id;
             $info->day = $request["day"];
             $info->month = $request["month"];
-            $info->year = "2017";
+            $time = date("Y");
+            $time = strtotime($time);
+            $year = date("Y", $time);
+            $info->year = $year;
             $info->item = $request["item"];
             $info->cost = $request["cost"];
             $info->users_id = $id;
@@ -213,7 +240,10 @@ class UserController extends Controller
             $id = Auth::user()->id;
             $info->day = $request["day"];
             $info->month = $request["month"];
-            $info->year = "2017";
+            $time = date("Y");
+            $time = strtotime($time);
+            $year = date("Y", $time);
+            $info->year = $year;
             $info->item = $request["item"];
             $info->cost = $request["cost"];
             $info->users_id = $id;
@@ -227,7 +257,10 @@ class UserController extends Controller
             $id = Auth::user()->id;
             $info->day = $request["day"];
             $info->month = $request["month"];
-            $info->year = "2017";
+            $time = date("Y");
+            $time = strtotime($time);
+            $year = date("Y", $time);
+            $info->year = $year;
             $info->item = $request["item"];
             $info->cost = $request["cost"];
             $info->users_id = $id;
@@ -241,7 +274,10 @@ class UserController extends Controller
             $id = Auth::user()->id;
             $info->day = $request["day"];
             $info->month = $request["month"];
-            $info->year = "2017";
+            $time = date("Y");
+            $time = strtotime($time);
+            $year = date("Y", $time);
+            $info->year = $year;
             $info->item = $request["item"];
             $info->cost = $request["cost"];
             $info->users_id = $id;
@@ -255,7 +291,10 @@ class UserController extends Controller
             $id = Auth::user()->id;
             $info->day = $request["day"];
             $info->month = $request["month"];
-            $info->year = "2017";
+            $time = date("Y");
+            $time = strtotime($time);
+            $year = date("Y", $time);
+            $info->year = $year;
             $info->item = $request["item"];
             $info->cost = $request["cost"];
             $info->users_id = $id;
@@ -269,7 +308,10 @@ class UserController extends Controller
             $id = Auth::user()->id;
             $info->day = $request["day"];
             $info->month = $request["month"];
-            $info->year = "2017";
+            $time = date("Y");
+            $time = strtotime($time);
+            $year = date("Y", $time);
+            $info->year = $year;
             $info->item = $request["item"];
             $info->cost = $request["cost"];
             $info->users_id = $id;
@@ -283,7 +325,10 @@ class UserController extends Controller
             $id = Auth::user()->id;
             $info->day = $request["day"];
             $info->month = $request["month"];
-            $info->year = "2017";
+            $time = date("Y");
+            $time = strtotime($time);
+            $year = date("Y", $time);
+            $info->year = $year;
             $info->item = $request["item"];
             $info->cost = $request["cost"];
             $info->users_id = $id;
@@ -297,7 +342,10 @@ class UserController extends Controller
             $id = Auth::user()->id;
             $info->day = $request["day"];
             $info->month = $request["month"];
-            $info->year = "2017";
+            $time = date("Y");
+            $time = strtotime($time);
+            $year = date("Y", $time);
+            $info->year = $year;
             $info->item = $request["item"];
             $info->cost = $request["cost"];
             $info->users_id = $id;
