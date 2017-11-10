@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>Vehicle Hire</title>
+<title>Monthly Info</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -35,8 +35,8 @@ footer{
     background: #7FFF00;
     border: 2px solid green;
     border-radius: 2px;
-    padding-left: 25px;
-    padding-right: 5px;
+    padding-left:25px;
+    box-shadow: 10px 10px 15px #888888;
 }
 
 body {font-family: "Lato", sans-serif}
@@ -68,7 +68,7 @@ body {font-family: "Lato", sans-serif}
             <div class="col-sm-2"> </div>
             <div class="col-sm-8">
                 <div class="show">
-                    <h2 style="text-align: center;">Monthly Cost Info =
+                    <h2 style="text-align: center;"><strong>Monthly Cost Info =
                         @if($mon == 1)
                         {{ "January" }}
                         @elseif($mon == 2)
@@ -94,28 +94,30 @@ body {font-family: "Lato", sans-serif}
                         @else
                         {{ "December" }}
                         @endif
+                        , {{ date("Y") }}
+                        </strong>
                     </h2>
                     
                     <?php
                         $sum = 0;
                     ?>
                     @foreach($alls as $all)
-                    	<h4>
-                    		
-                    	</h4>
-						<h4>
-							<strong>{{ $all->day }} &nbsp;
-							{{ $all->item }} =
-						
-							{{ $all->cost }}tk </strong>
-                            <span class="pull-right">{{ $all->created_at->diffForHumans() }}</span>
+                        <h4>
+                            
+                        </h4>
+                        <h4>
+                            <strong>{{ $all->day }} &nbsp;
+                            {{ $all->item }} =
+                        
+                            {{ $all->cost }}tk </strong>
+                            <span class="pull-right" style="padding-right:10px;" >{{ $all->created_at->diffForHumans() }}</span>
                             <?php
                                 $sum = $sum + $all->cost;
                             ?>
-						</h4>
-					@endforeach
+                        </h4>
+                    @endforeach
                     <h3 style="text-align: center;">
-                        Total cost = {{ $sum }}tk
+                      <strong>Total cost = {{ $sum }}tk</strong>
                     </h3>
                 </div>
             </div>
