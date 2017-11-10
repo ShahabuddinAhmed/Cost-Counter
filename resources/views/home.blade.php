@@ -79,6 +79,9 @@ body {font-family: "Lato", sans-serif}
             <br>
             <br>
             <br>
+            <div>
+                <h4><marquee>রাত ১০টা থেকে ১১টা পর্যন্ত সার্ভার বন্ধ থাকায়  এই সময়ে সাইটটি ব্যবহার করা যাবে না। সাময়িক অসুবিধার জন্য আন্তরিকভাবে দুঃখিত।</marquee></h4>
+            </div>
             <br>
             <div class="col-sm-3">
                 
@@ -103,7 +106,7 @@ body {font-family: "Lato", sans-serif}
                     {{ csrf_field() }}
                     <div class="form-group">
                         <label>Date</label>
-                        <input type="date" required="" class="form-control" placeholder="Enter Item Name..." name="day">
+                        <input type="date" required="" class="form-control" placeholder="Enter date formate as YYYY-MM-DD..." name="day">
                     </div>
 
                     <div class="form-group">
