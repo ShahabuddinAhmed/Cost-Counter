@@ -1,15 +1,37 @@
 <!DOCTYPE html>
 <html>
-<title>Cost Counter</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<head>
+    <title>Cost Counter</title>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <script type="text/javascript">
+    var datefield=document.createElement("input")
+    datefield.setAttribute("type", "date")
+    if (datefield.type!="date"){ //if browser doesn't support input type="date", load files for jQuery UI Date Picker
+        document.write('<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />\n')
+        document.write('<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"><\/script>\n')
+        document.write('<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"><\/script>\n')
+    }
+</script>
+
+<script>
+    if (datefield.type!="date"){ //if browser doesn't support input type="date", initialize date picker widget:
+        jQuery(function($){ //on document.ready
+            $('#start_date').datepicker({
+                dateFormat: 'yy-mm-dd'
+            });
+        })
+    }
+</script>
+</head>
 <style>
 a
 {
@@ -100,13 +122,15 @@ body {font-family: "Lato", sans-serif}
             </div>
         </div>
         <div class="row">
+
+            
             <div class="col-sm-3"> </div>
             <div class="col-sm-6">
                 <form action="/info" method="POST">
                     {{ csrf_field() }}
                     <div class="form-group">
                         <label>Date</label>
-                        <input type="date" required="" class="form-control" placeholder="Enter date formate as YYYY-MM-DD..." name="day">
+                        <input id="start_date" type="date" required="" class="form-control" placeholder="Select Date..." name="day">
                     </div>
 
                     <div class="form-group">
