@@ -12,25 +12,6 @@
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-      <script type="text/javascript">
-    var datefield=document.createElement("input")
-    datefield.setAttribute("type", "date")
-    if (datefield.type!="date"){ //if browser doesn't support input type="date", load files for jQuery UI Date Picker
-        document.write('<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />\n')
-        document.write('<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"><\/script>\n')
-        document.write('<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"><\/script>\n')
-    }
-</script>
-
-<script>
-    if (datefield.type!="date"){ //if browser doesn't support input type="date", initialize date picker widget:
-        jQuery(function($){ //on document.ready
-            $('#start_date').datepicker({
-                dateFormat: 'yy-mm-dd'
-            });
-        })
-    }
-</script>
 </head>
 <style>
 a
@@ -60,13 +41,75 @@ body {font-family: "Lato", sans-serif}
 </style>
 <body>
 
+
+    <script type="text/javascript">
+        var datefield=document.createElement("input")
+        datefield.setAttribute("type", "date")
+        if (datefield.type!="date"){ //if browser doesn't support input type="date", load files for jQuery UI Date Picker
+        document.write('<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />\n')
+        document.write('<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"><\/script>\n')
+        document.write('<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"><\/script>\n')
+        }
+    </script>
+
+    <script>
+        if (datefield.type!="date"){ //if browser doesn't support input type="date", initialize date picker widget:
+        jQuery(function($){ //on document.ready
+            $('#start_date').datepicker({
+                dateFormat: 'yy-mm-dd'
+            });
+        })
+        }
+    </script>
+
+    <script type="text/javascript">
+        var datefield=document.createElement("input")
+        datefield.setAttribute("type", "date")
+        if (datefield.type!="date"){ //if browser doesn't support input type="date", load files for jQuery UI Date Picker
+        document.write('<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />\n')
+        document.write('<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"><\/script>\n')
+        document.write('<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"><\/script>\n')
+        }
+    </script>
+
+    <script>
+        if (datefield.type!="date"){ //if browser doesn't support input type="date", initialize date picker widget:
+        jQuery(function($){ //on document.ready
+            $('#start_date-cr').datepicker({
+                dateFormat: 'yy-mm-dd'
+            });
+        })
+        }
+    </script>
+
+
+    <script type="text/javascript">
+        var datefield=document.createElement("input")
+        datefield.setAttribute("type", "date")
+        if (datefield.type!="date"){ //if browser doesn't support input type="date", load files for jQuery UI Date Picker
+        document.write('<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />\n')
+        document.write('<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"><\/script>\n')
+        document.write('<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"><\/script>\n')
+        }
+    </script>
+
+    <script>
+        if (datefield.type!="date"){ //if browser doesn't support input type="date", initialize date picker widget:
+        jQuery(function($){ //on document.ready
+            $('#start_date-dr').datepicker({
+                dateFormat: 'yy-mm-dd'
+            });
+        })
+        }
+    </script>
+
 <!-- Navbar -->
 <div class="w3-top">
     <div class="w3-bar w3-black w3-card">
         
         <a href="/" class="w3-bar-item w3-button w3-padding-large" style="text-decoration: none;">HOME</a>
         <div class="w3-dropdown-hover">
-            <button class="w3-padding-large w3-button" title="More">View Monthly Cost Info<i class="fa fa-caret-down"></i></button>     
+            <button class="w3-padding-large w3-button" title="More">View Cost Info<i class="fa fa-caret-down"></i></button>     
             <div class="w3-dropdown-content w3-bar-block w3-card-4">
                 <a style="text-decoration: none;text-align: center;" href="/jan" class="w3-bar-item w3-button">Jan</a>
                 <a style="text-decoration: none;text-align: center;" href="/feb" class="w3-bar-item w3-button">Feb</a>
@@ -82,6 +125,8 @@ body {font-family: "Lato", sans-serif}
                 <a style="text-decoration: none;text-align: center;" href="/dec" class="w3-bar-item w3-button">Dec</a>
             </div>
         </div>
+        <a href="/debit" class="w3-bar-item w3-button w3-padding-large" style="text-decoration: none;">View Debit's Info</a>
+        <a href="/credit" class="w3-bar-item w3-button w3-padding-large" style="text-decoration: none;">View Credit's Info</a>
         <div style="float: right;">
             <a href="#" class="w3-bar-item w3-button w3-padding-large" style="text-decoration: none;">{{ Auth::user()->name }}</a>
             <a href="{{ route('logout') }}" class="w3-bar-item w3-button w3-padding-large" style="text-decoration: none;" onclick="event.preventDefault();
@@ -102,7 +147,8 @@ body {font-family: "Lato", sans-serif}
             <br>
             <br>
             <div>
-                <h4><marquee>রাত ১০টা থেকে ১১টা পর্যন্ত সার্ভার বন্ধ থাকায়  এই সময়ে সাইটটি ব্যবহার করা যাবে না। সাময়িক অসুবিধার জন্য আন্তরিকভাবে দুঃখিত।</marquee></h4>
+                <h4><marquee>রাত ১০টা থেকে ১১টা পর্যন্ত সার্ভার বন্ধ থাকায়  এই সময়ে সাইটটি ব্যবহার করা যাবে না। 
+                সাময়িক অসুবিধার জন্য আন্তরিকভাবে দুঃখিত।</marquee></h4>
             </div>
             <br>
             <div class="col-sm-3">
@@ -112,7 +158,7 @@ body {font-family: "Lato", sans-serif}
                 @if(session()->has("success"))
                     <div class="alert alert-success alert-dismissable">
                         <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-                        <strong>Success!</strong> {{ session()->get("success") }}
+                        <h4><strong>Success!</strong> {{ session()->get("success") }}</h4>
                     </div>
                 @endif
             </div>
@@ -123,7 +169,7 @@ body {font-family: "Lato", sans-serif}
         </div>
         <div class="row">
 
-            
+            <h3 style="text-align: center;">User's cost info </h3>
             <div class="col-sm-3"> </div>
             <div class="col-sm-6">
                 <form action="/info" method="POST">
@@ -171,11 +217,80 @@ body {font-family: "Lato", sans-serif}
 
             </div>
         </div>
+        <br>
+        <br>
+        <br>
+        {{-- Debit and credit of users --}}
+
+        <div class="row">
+
+            <h3 style="text-align: center;">User's Debit Info</h3>
+            <div class="col-sm-3"> </div>
+            <div class="col-sm-6">
+                <form action="/debit" method="POST">
+                    {{ csrf_field() }}
+                    <div class="form-group">
+                        <label> Select Date</label>
+                        <input id="start_date-dr" type="date" required="" class="form-control" placeholder="Select Date..." name="day">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Debiter's Name</label>
+                        <input type="text" required="" class="form-control" placeholder="Enter debiter's Name..." name="name">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Amount</label>
+                        <input type="text" required="" class="form-control" placeholder="Enter debit Cost..." name="cost">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+            </div>
+            <div class="col-sm-3">
+
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+
+        <div class="row">
+
+            <h3 style="text-align: center;">User's Credit Info</h3>
+            <div class="col-sm-3"> </div>
+            <div class="col-sm-6">
+                <form action="/credit" method="POST">
+                    {{ csrf_field() }}
+                    <div class="form-group">
+                        <label>Select Date</label>
+                        <input id="start_date-cr" type="date" required="" class="form-control" placeholder="Select Date..." name="day">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Crediter's Name</label>
+                        <input type="text" required="" class="form-control" placeholder="Enter crediter's Name..." name="name">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Amount</label>
+                        <input type="text" required="" class="form-control" placeholder="Enter credit Cost..." name="cost">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+            </div>
+            <div class="col-sm-3">
+
+            </div>
+        </div>
+
+
             <br>
-                <br>
-                <br>
-                <br>
-                <br>
+            <br>
+            <br>
+            <br>
+            <br>
     </div>
 
 
