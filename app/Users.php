@@ -65,4 +65,14 @@ class Users extends Model
     {
     	return $this->hasMany(Dec::class);
     }
+
+    public function Credit()
+    {
+        return $this->hasMany(credit::class);
+    }
+
+    public function Debit()
+    {
+        return $this->hasMany(debit::class);
+    }
 }
