@@ -27,21 +27,6 @@
             </div>
         </div>
         <div class="col-sm-2"> </div>
-    
-        <div class="col-sm-3"> </div>
-        <div class="col-md-6">
-            <br>
-            <br>
-            <form action="/update" method="POST">
-                {{ csrf_field() }}
-                <div class="form-group">
-                    <label>Year</label>
-                    <input type="text" required="" class="form-control" placeholder="Add a New Year..." name="year">
-                </div>
-                <button type="submit" class="btn btn-default">Submit</button>
-            </form>
-        </div>
-        <div class="col-sm-3"> </div>
     </div>
 </div>
 @endsection
