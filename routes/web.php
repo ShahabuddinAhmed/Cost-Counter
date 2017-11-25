@@ -33,6 +33,18 @@ Route::get('/nov', 'UserController@viewinfo11');
 Route::get('/dec', 'UserController@viewinfo12');
 
 
+Route::get('/debit', 'UserController@debit');
+Route::get('/credit', 'UserController@credit');
+Route::get('/edit-dr/{id}', 'UserController@drEdit');
+Route::get('/edit-cr/{id}', 'UserController@crcrEdit');
+Route::post('/debit', 'UserController@postDebit');
+Route::post('/credit', 'UserController@postCredit');
+Route::post('/update-dr/{id}', 'UserController@drUpdate');
+Route::post('/update-cr/{id}', 'UserController@crUpdate');
+Route::delete('/delete-dr/{id}', 'UserController@postDebitDelete');
+Route::delete('/delete-cr/{id}', 'UserController@postCreditDelete');
+
+
 // Authentication Routes...
 Route::post('/update', 'AdminController@adminUpdate');
 Route::get('admin/home', 'AdminController@index')->name('admin.home');
