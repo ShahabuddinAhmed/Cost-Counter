@@ -18,6 +18,8 @@ use App\Nov;
 use App\Dec;
 use App\User;
 use App\Users;
+use App\debit;
+use App\credit;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
@@ -143,6 +145,52 @@ class UserController extends Controller
         $year = date("Y");
         $alls = Users::find($id)->dec->where("year", $year);
         return view('viewinfo', compact('alls', 'mon'));
+    }
+
+    public function debit()
+    {
+        $id = Auth::user()->id;
+        $alls = Users::find($id)->Debit;
+        return view('admin/debit', compact('alls'));
+    }
+
+    public function credit()
+    {
+        $id = Auth::user()->id;
+        $alls = Users::find($id)->Credit;
+        return view('admin/credit', compact('alls'));
+    }
+
+    public function postDebitDelete(Request $request, $id)
+    {
+        $delete = debit::find($id);
+        $delete->delete();
+        $request->session()->flash('success', 'You have successfully deleted data...');
+        return redirect("debit");
+
+    }
+
+    public function postCreditDelete(Request $request, $id)
+    {
+        $delete = credit::find($id);
+        $delete->delete();
+        $request->session()->flash('success', 'You have successfully deleted data...');
+        return redirect("credit");
+
+    }
+
+    public function drEdit($id)
+    {
+        $flag = "debit";
+        $edit = debit::find($id);
+        return view("admin/edit")->with("flag",$flag)->with("edit", $edit);
+    }
+
+    public function crcrEdit($id)
+    {
+        $flag = "credit";
+        $edit = credit::find($id);
+        return view("admin/edit")->with("flag",$flag)->with("edit", $edit);
     }
 
 
@@ -354,5 +402,53 @@ class UserController extends Controller
             return redirect('/home');
 
         }
+    }
+
+    public function postDebit(Request $request)
+    {
+        $debit = new debit;
+        $id = Auth::user()->id;
+        $debit->date = $request["day"];
+        $debit->name = $request["name"];
+        $debit->debit = $request["cost"];
+        $debit->users_id = $id;
+        $debit->save();
+        $request->session()->flash('success', 'You have successfully added data...');
+            return redirect('/home');
+    }
+
+    public function postCredit(Request $request)
+    {
+        $debit = new credit;
+        $id = Auth::user()->id;
+        $debit->date = $request["day"];
+        $debit->name = $request["name"];
+        $debit->credit = $request["cost"];
+        $debit->users_id = $id;
+        $debit->save();
+        $request->session()->flash('success', 'You have successfully added data...');
+            return redirect('/home');
+    }
+
+    public function drUpdate(Request $request, $id)
+    {
+        $debit = debit::find($id);
+        $debit->date = $request["day"];
+        $debit->name = $request["name"];
+        $debit->debit = $request["cost"];
+        $debit->save();
+        $request->session()->flash('success', 'You have successfully updated data...');
+            return redirect('/debit');
+    }
+
+    public function crUpdate(Request $request, $id)
+    {
+        $debit = credit::find($id);
+        $debit->date = $request["day"];
+        $debit->name = $request["name"];
+        $debit->credit = $request["cost"];
+        $debit->save();
+        $request->session()->flash('success', 'You have successfully updated data...');
+            return redirect('/credit');
     }
 }
