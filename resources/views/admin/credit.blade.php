@@ -84,7 +84,7 @@ body {font-family: "Lato", sans-serif}
             <div class="col-sm-2"> </div>
             <div class="col-sm-8">
                 <div class="show">
-                    <h2 style="text-align: center;"><strong>Your Credit Information
+                    <h2 style="text-align: center;"><strong>Your Credit Information-
                         {{ date("Y") }}
                         </strong>
                     </h2>
